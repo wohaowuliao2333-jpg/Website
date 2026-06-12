@@ -539,7 +539,8 @@ code {
 }
 
 .do-differently h3 { color: #fff; margin: 0 0 0.7rem; }
-.do-differently p { margin: 0; }
+.do-differently p { margin: 0 0 0.9rem; }
+.do-differently p:last-child { margin-bottom: 0; }
 
 /* ---------- Footer ---------- */
 .footer {
