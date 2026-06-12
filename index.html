@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>League Central — COMP 3350 Final Project</title>
+<meta name="description" content="League Central is a recreational sports league management desktop application built by Team A01-G08 for COMP 3350.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<meta name="theme-color" content="#0b0b0d">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img src="assets/logo.svg" alt="League Central logo" class="brand-logo" width="32" height="32"> League Central</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <img src="assets/logo.svg" alt="League Central logo" class="hero-logo" width="78" height="78">
+    <p class="hero-kicker">COMP 3350 · Summer 2026 · Team A01-G08</p>
+    <h1>League<span class="accent">Central</span></h1>
+    <p class="hero-tagline">Run your whole recreational sports league from one desktop app — leagues, teams, rosters, schedules, and results, without the spreadsheet chaos.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#demo">Watch the Demo</a>
+      <a class="btn btn-ghost" href="#reflection">Read Our Reflection</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Iterations</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Architecture Layers</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Levels of Testing</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Team Members</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ OVERVIEW ============ -->
+  <section id="overview" class="section">
+    <div class="container">
+      <p class="section-kicker">Project Overview</p>
+      <h2>What is League Central?</h2>
+      <div class="two-col">
+        <div>
+          <p><strong>League Central</strong> is a desktop application that centralizes recreational sports league management into one place. Organizers of community basketball, soccer, volleyball, and intramural leagues today juggle spreadsheets, paper records, and group chats to track schedules, rosters, teams, and results — a process that is slow, error-prone, and stressful.</p>
+          <p>League Central replaces that patchwork with a single structured system: create a league, build its teams, register players, schedule games at real facilities, and record results that automatically update each team's win/loss record.</p>
+          <p class="vision-quote">Our goal: make recreational league management more organized, accessible, and less time-consuming — measured by the time organizers save on admin work and the accuracy of their league information.</p>
+        </div>
+        <div class="card-stack">
+          <div class="info-card">
+            <h3>🎯 Target Users</h3>
+            <p>Recreational sports organizers, league administrators, and amateur coordinators (ages 18–50) who run community leagues, school intramurals, and local tournaments alongside work and school — and need admin tasks to take minutes, not evenings.</p>
+          </div>
+          <div class="info-card">
+            <h3>🛠️ Built With</h3>
+            <ul class="chips">
+              <li>Java 21</li><li>JavaFX</li><li>Gradle</li><li>SQLite</li>
+              <li>JUnit 5</li><li>Mockito</li><li>TestFX</li><li>JaCoCo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="section section-alt">
+    <div class="container">
+      <p class="section-kicker">The Product</p>
+      <h2>Major Features</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">🔐</div>
+          <h3>Accounts &amp; Sessions</h3>
+          <p>Register a new organizer account, log in with validated credentials, edit your profile, and log out — sessions are managed cleanly across the whole app.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏆</div>
+          <h3>League Management</h3>
+          <p>Create leagues with a sport, description, and season dates, then browse them in a card-based selector. Each league has its own info page tying everything together.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">👥</div>
+          <h3>Teams &amp; Standings</h3>
+          <p>Add teams with a coach and captain to any league. Every team tracks its win/loss record, which updates automatically as game results are recorded.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📋</div>
+          <h3>Player Rosters</h3>
+          <p>Register players with name, age, and gender, assign them to teams, and browse the full league roster in a sortable table — with duplicate detection and field validation.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📅</div>
+          <h3>Game Scheduling</h3>
+          <p>Schedule games between two teams at a chosen facility, date, and time slot. View the schedule per league or per team so everyone knows where to be.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✅</div>
+          <h3>Result Recording</h3>
+          <p>Record the winner and loser of each matchup. Team records update instantly, keeping the league's competitive picture accurate all season.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section id="demo" class="section">
+    <div class="container">
+      <p class="section-kicker">Product Demonstration</p>
+      <h2>See It In Action</h2>
+      <p class="section-lead">A screen recording of the final system — not mockups — walking through the primary user flows below.</p>
+
+      <div class="video-frame">
+        <!-- Place the demo recording at assets/demo.mp4 to enable playback -->
+        <video controls preload="metadata" poster="">
+          <source src="assets/demo.mp4" type="video/mp4">
+          Your browser does not support embedded video. The demo recording is available at <code>assets/demo.mp4</code> in the repository.
+        </video>
+      </div>
+
+      <h3 class="flows-title">Primary User Flows Demonstrated</h3>
+      <div class="flow-grid">
+        <div class="flow">
+          <span class="flow-step">1</span>
+          <div>
+            <h4>Register &amp; Log In</h4>
+            <p>Create an account, log in, and land on the league selector. Invalid credentials and missing fields are caught with clear error messages.</p>
+          </div>
+        </div>
+        <div class="flow">
+          <span class="flow-step">2</span>
+          <div>
+            <h4>Create a League &amp; Teams</h4>
+            <p>Set up a new league with its sport and season, then add teams with coaches and captains.</p>
+          </div>
+        </div>
+        <div class="flow">
+          <span class="flow-step">3</span>
+          <div>
+            <h4>Build the Roster</h4>
+            <p>Add players to the league, assign them to teams, and browse the roster table.</p>
+          </div>
+        </div>
+        <div class="flow">
+          <span class="flow-step">4</span>
+          <div>
+            <h4>Schedule &amp; Record Games</h4>
+            <p>Create a matchup with a facility and time slot, then record the result and watch the standings update.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEAM ============ -->
+  <section id="team" class="section section-alt">
+    <div class="container">
+      <p class="section-kicker">The Team</p>
+      <h2>Who Built It</h2>
+      <p class="section-lead">Five developers, clearly defined roles, and work divided by strengths — with everyone contributing across features, testing, and documentation.</p>
+      <div class="team-grid">
+        <div class="member">
+          <div class="avatar">FC</div>
+          <h3>Francesca Carino</h3>
+          <p class="member-contrib"><strong>Contributions:</strong> Project coordination (leading meetings and delegating tasks), code reviews, managing the GitLab issue board, developing features such as player creation and team management, refactoring implementations such as the presentation layer.</p>
+          <p class="member-skills"><strong>Skills gained:</strong> Learned JavaFX, Gradle, Mockito and integration testing, software layered architecture, identifying and ensuring SOLID principles and applying design patterns.</p>
+        </div>
+        <div class="member">
+          <div class="avatar">RT</div>
+          <h3>Ryan Teranishi</h3>
+          <p class="member-contrib"><strong>Contributions:</strong> Peer review, helped with teaching Git and our team Git standards, database schema implementation and maintenance.</p>
+          <p class="member-skills"><strong>Skills gained:</strong> Learning and applying SOLID principles, design pattern implementation (Factory, Strategy, etc.).</p>
+        </div>
+        <div class="member">
+          <div class="avatar">RF</div>
+          <h3>Ruitian Fan</h3>
+          <p class="member-contrib"><strong>Contributions:</strong> <span class="placeholder">[To be filled in]</span></p>
+          <p class="member-skills"><strong>Skills gained:</strong> <span class="placeholder">[To be filled in]</span></p>
+        </div>
+        <div class="member">
+          <div class="avatar">SP</div>
+          <h3>Stephert Pinto</h3>
+          <p class="member-contrib"><strong>Contributions:</strong> <span class="placeholder">[To be filled in]</span></p>
+          <p class="member-skills"><strong>Skills gained:</strong> <span class="placeholder">[To be filled in]</span></p>
+        </div>
+        <div class="member">
+          <div class="avatar">MZ</div>
+          <h3>Muhammad Zamn</h3>
+          <p class="member-contrib"><strong>Contributions:</strong> <span class="placeholder">[To be filled in]</span></p>
+          <p class="member-skills"><strong>Skills gained:</strong> <span class="placeholder">[To be filled in]</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHITECTURE ============ -->
+  <section id="architecture" class="section">
+    <div class="container">
+      <p class="section-kicker">Engineering</p>
+      <h2>How the System Evolved</h2>
+      <p class="section-lead">Our system has evolved greatly from Iteration 0. Throughout our development, we refactored much of our code base to recognize any SOLID principles that were being violated, as well as using our knowledge about design patterns to identify places we can implement them. The diagrams below tell the story.</p>
+
+      <div class="arch-compare">
+        <figure>
+          <figcaption><span class="tag tag-then">Iteration 1</span> A minimal layered skeleton: four services, in-memory fake repositories, five views.</figcaption>
+          <img src="assets/architecture-iteration-1.png" alt="Iteration 1 architecture diagram showing presentation, service, persistence, and domain layers with fake in-memory repositories" loading="lazy">
+        </figure>
+        <figure>
+          <figcaption><span class="tag tag-now">Iteration 3 (Final)</span> Dedicated validators, controllers, a game/scheduling domain, and a full SQLite persistence layer behind the same repository interfaces.</figcaption>
+          <img src="assets/architecture-iteration-3.png" alt="Iteration 3 architecture diagram showing expanded presentation, business, domain, and persistence layers with both fake and SQLite repository implementations" loading="lazy">
+        </figure>
+      </div>
+
+      <h3>Key Architectural Decisions</h3>
+      <div class="decision-grid">
+        <div class="decision">
+          <h4>Repository Pattern from Day One</h4>
+          <p>All data access goes through repository interfaces. We started with in-memory HashMap fakes to iterate quickly on domain models and UI, then swapped in SQLite implementations in Iteration 2 — <strong>behind the same repository interfaces, exactly as planned in the PRD</strong>. The strongest validation of this decision.</p>
+        </div>
+        <div class="decision">
+          <h4>Strict Four-Layer Separation</h4>
+          <p>Presentation → Business → Domain → Persistence. Business logic lives in services, input rules live in dedicated validator classes, and custom exceptions (<code>DuplicateRecordException</code>, <code>InvalidMatchupException</code>, …) carry errors to user-friendly alerts. The tradeoff: more files and boilerplate, but every bug had an obvious home.</p>
+        </div>
+        <div class="decision">
+          <h4>Keeping Fakes After the Database Arrived</h4>
+          <p>We kept the fake repositories alongside SQLite so logic tests stay fast and deterministic, while integration tests exercise the real database. The same interfaces serve both — one abstraction paying off twice.</p>
+        </div>
+        <div class="decision">
+          <h4>Desktop-First Scope</h4>
+          <p>In Iteration 0 we pivoted from "SportsMeet," a social event-discovery app, after realizing its social features needed networking beyond the project's local-machine scope. Choosing a self-contained league manager kept every iteration shippable.</p>
+        </div>
+        <div class="decision">
+          <h4>Scene Navigator</h4>
+          <p>Centralizes page changes to make it simpler. Tradeoff: had the risk of becoming a "God Class".</p>
+        </div>
+        <div class="decision">
+          <h4>Validators in Service Layer</h4>
+          <p>Leaving it out of JavaFX forms ensured SRP and made it more reusable.</p>
+        </div>
+        <div class="decision">
+          <h4>Controllers</h4>
+          <p>Splitting responsibilities into <code>SessionController</code>, <code>LeagueController</code>, <code>TeamController</code> to reduce coupling between views and services. Tradeoff: more setup in <code>Main</code>.</p>
+        </div>
+        <div class="decision">
+          <h4>Combining Create/Edit Forms</h4>
+          <p>Using one form class with <code>editMode</code> for create and update screens. Tradeoff: reduced duplicate UI code, but increased conditional logic inside the form.</p>
+        </div>
+        <div class="decision">
+          <h4>Separating Utilities/Constants</h4>
+          <p>Using <code>ViewUtils</code>, <code>MessagesUtil</code>, <code>ConfigConstants</code>, <code>UIConstants</code>, etc. Tradeoff: less repeated code and styling, but utilities can become cluttered if overused.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFLECTION ============ -->
+  <section id="reflection" class="section section-alt">
+    <div class="container">
+      <p class="section-kicker">Development Reflection</p>
+      <h2>What We Learned the Hard Way</h2>
+
+      <div class="reflection-hero">
+        <div class="reflection-block problem">
+          <span class="reflection-label">The Major Issue — Iteration 1</span>
+          <p>Our issue board didn't match what the milestone actually required. Features and user stories were vague enough that development bottlenecked while we <strong>reverse-engineered the Milestone 1 board</strong> mid-iteration. Instructor feedback confirmed the misalignment, and poor time planning meant last-minute changes were still landing on submission day.</p>
+        </div>
+        <div class="reflection-block change">
+          <span class="reflection-label">What We Changed</span>
+          <ul>
+            <li><strong>Branch per user story, bug, or tech-debt item</strong> instead of one branch per feature — producing smaller, more frequent merge requests so the iteration dev branch stayed current for dependencies.</li>
+            <li><strong>Labels for bugs, dev tasks, and tech debt</strong> to keep milestones organized and honest.</li>
+            <li><strong>Tests written alongside features</strong>, not after — plus a dedicated Discord channel for merge requests so everyone participated in code review.</li>
+            <li><strong>Soft deadlines at least a day before submission</strong>, reserving the final day for cleanup only, and the first days of each iteration for refactoring based on feedback.</li>
+          </ul>
+        </div>
+        <div class="reflection-block evidence">
+          <span class="reflection-label">Evidence of Improvement</span>
+          <p>Iteration 2 delivered our riskiest change — migrating the entire persistence layer from in-memory fakes to SQLite — alongside league and team creation features. The Iteration 2 retrospective records the payoff directly: after the dedicated refactoring days, <strong>the codebase followed SOLID principles noticeably better</strong>; <strong>integration and unit testing improved, with more tests created overall</strong>; and with no more mock data, <strong>the full workflow could finally be explored end-to-end</strong>. Per-story branching kept the dev branch current as planned, and consistent logging of time spent on tasks made our estimates and progress tracking more accurate.</p>
+        </div>
+      </div>
+
+      <h3 class="deep-dive-title">Technical Deep Dive: Refactoring Two SRP Violations</h3>
+      <div class="reflection-hero">
+        <div class="reflection-block problem">
+          <span class="reflection-label">The Issue</span>
+          <p>One major issue that was identified was two instances of SRP violations. In particular, we had two files, those being <code>BusinessValidator.java</code> and <code>SceneNavigator.java</code>, both of which were major violations of the Single Responsibility Principle due to the fact that each respectively had too much functionality that could be broken down, leading to low cohesion. Although both were created for convenience, one being a localized file for all validation methods, and the other for easy navigation through the application, the designs for both were flawed due to their SRP violations.</p>
+        </div>
+        <div class="reflection-block change">
+          <span class="reflection-label">What We Changed</span>
+          <p>Our change was simple: break down each file into logical pieces that would minimize the amount of refactoring elsewhere. For the <code>BusinessValidator</code>, we made the decision to break this down into 6 files, 5 of which were service specific (i.e. <code>GameService</code> → <code>GameServiceValidator</code>, <code>LeagueService</code> → <code>LeagueServiceValidator</code>), and the final was a <code>GeneralFieldValidator</code> that contained methods that would be used by all other validation files. Regarding the <code>SceneNavigator</code>, this file was previously injected with all services that were all publicly accessible through getters, since the <code>SceneNavigator</code> was injected into every page. This file was also used to navigate through all of our different pages, setting the scene of a page when needed. Our first change was to remove access to all services by removing the public getters, and replacing the services with controllers. These controllers would then be passed into pages, therefore only giving each page the required controller(s) and nothing more. Our second change was to ensure that the <code>SceneNavigator</code> had one job: navigate through our different pages.</p>
+        </div>
+        <div class="reflection-block evidence">
+          <span class="reflection-label">The Result</span>
+          <p>As of now, our current code base uses this new implementation of the validation and scene navigation. Going through our repository, these changes were made later in development, but were a crucial part of our refactoring process as these were major violations of SRP.</p>
+        </div>
+      </div>
+
+      <div class="reflection-columns">
+        <div class="reflection-card">
+          <h3>✅ What Worked Well</h3>
+          <ul>
+            <li>Fast, consistent communication — agreed response times (4h weekdays, 30min near deadlines) were actually honored.</li>
+            <li>Our transition from branching for features to user stories. At the beginning of development we branched off our develop branch by feature, but if another developer is dependent on your work, they would either need to branch off your working branch containing unreviewed code, or wait until your work has been peer reviewed, fixed and merged. This bottleneck would have been more evident in Iteration 3, as we had multiple moving pieces that needed to be implemented for others to use. By branching by user stories, we could merge our work more often and increase our development efficiency by minimizing the bottleneck.</li>
+            <li>The repository abstraction made the database migration nearly painless.</li>
+            <li>Work was distributed by scope, availability, and comfort level, and it stayed balanced across iterations.</li>
+            <li>Twice-weekly in-person meetings with documented action items kept five schedules aligned.</li>
+            <li>Recovering from the Iteration 0 project pivot in days, not weeks.</li>
+          </ul>
+        </div>
+        <div class="reflection-card">
+          <h3>⚠️ What Didn't</h3>
+          <ul>
+            <li>Underspecified user stories early on cost us real development time.</li>
+            <li>Big design decisions were sometimes made quickly and rethought later — more upfront discussion would have been cheaper.</li>
+            <li>Finishing initial development too close to submission was a recurring theme — even in Iteration 2 we wished we had wrapped up a day earlier to leave room for proper testing and polish.</li>
+          </ul>
+        </div>
+        <div class="reflection-card">
+          <h3>🧪 Testing Strategy</h3>
+          <ul>
+            <li><strong>Logic tests</strong> against fake repositories for fast feedback.</li>
+            <li><strong>Mockito tests</strong> isolating each service from its dependencies.</li>
+            <li><strong>Integration tests</strong> against the real SQLite database.</li>
+            <li><strong>End-to-end TestFX tests</strong> driving the actual JavaFX UI (login, registration, league creation) — added as a direct action item from the Iteration 2 retro.</li>
+            <li>After Iteration 2, merge request reviews covered both the code and the running application, catching functional issues code reading alone would miss.</li>
+            <li>JaCoCo coverage reports with a ≥80% line-coverage target kept us honest.</li>
+          </ul>
+        </div>
+        <div class="reflection-card">
+          <h3>🧾 Remaining Debt &amp; Limits</h3>
+          <ul>
+            <li>Something we considered was to remove our files with the suffix "List" and create a builder class that would effectively create these components. Investigating these files, they all have a similar goal: create a component containing a table. These files could be replaced using a builder that constructs the component, rather than having multiple files with the only changes being small differences in how the table is constructed.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="do-differently">
+        <h3>If We Started Over</h3>
+        <p><span class="placeholder">[To be filled in]</span></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand"><img src="assets/logo.svg" alt="League Central logo" class="brand-logo" width="28" height="28"> League Central</p>
+      <p>COMP 3350 — Final Project Presentation · Summer 2026</p>
+    </div>
+    <p>Team A01-G08 · Francesca Carino · Ryan Teranishi · Ruitian Fan · Stephert Pinto · Muhammad Zamn</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
